@@ -17,8 +17,12 @@ img {
 .container {
     height: 95vh;
     background-color: white;
-    border-radius: 10px;
     box-shadow: .2px .2px .2px black, 0 0 .2px black, 0 0 5px black;
+}
+
+section .row,
+aside .row .col {
+    background-color: #EAEAEA;
 }
 
 /*
@@ -36,8 +40,19 @@ body {
     MAIN / ASIDE
 */
 
+body main #app aside {
+    height: 780px;
+}
+
+body main #app aside .scroll {
+    height: 95%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 .container .row .col-4 .row .col img,
-.container .row .col-4 .row .col-10 img {
+.container .row .col-4 .row .col-10 img,
+section .row .col-7 img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -45,21 +60,38 @@ body {
 }
 
 .container .row .col-4 .row .col-10 div p:not(:first-child),
-.container .row .col-4 .row .col-1 {
+.container .row .col-4 .row .col-1,
+section .row .col i {
     font-size: 1cap;
     color: #B1B1B1;
 }
 
-.container .row .col-4 .row .col i {
+.container .row .col-4 .row .col i,
+section .row .col i {
     margin: 0 5px;
     font-size: 2cap;
     color: #B1B1B1;
 }
 
 .active {
-background-color: #E9EBEB;
+    background-color: #E9EBEB;
 }
 
 /*
     MAIN / SECTION
 */
+
+body main #app section .row:not(:first-child) {
+    height: 82%;
+}
+
+section .row .col-7 div p:last-child {
+    font-size: 1cap;
+    color: grey;
+}
+
+section .row:last-child {
+    background-image: url(../img/mine.jpg);
+    max-height: 100%;
+    max-width: 100%;
+}
