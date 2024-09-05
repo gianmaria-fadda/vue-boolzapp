@@ -40,8 +40,9 @@ body {
     MAIN / ASIDE
 */
 
-body main #app aside .scroll {
-    height: 95%;
+.pointer {
+    height: 500px;
+    cursor: pointer;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -87,6 +88,7 @@ body main #app section .row .col-12 .row .col {
 
 body main #app section .row .col-12 {
     overflow-y: scroll;
+    height: 690px;
 }
 
 section .row .col-7 div p:last-child {
@@ -106,10 +108,32 @@ section .row .col-12 .row .col {
     padding: 50px 100px;
 }
 
-section .row:last-child .col-12 .row .col div div p:last-child {
+section .row .col-12 .row .col div div p:last-child {
     padding-right: 5px;
     font-size: 1cap;
     color: #B1B1B1;
+}
+
+.received {
+    display: flex;
+    justify-content: start;
+}
+
+.received-bg {
+    background-color: #FFFFFF;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.sent {
+    display: flex;
+    justify-content: end;
+}
+
+.sent-bg {
+    background-color: #D5F9BA;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
 /*

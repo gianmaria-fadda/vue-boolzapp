@@ -40,12 +40,13 @@
                                 </form>
                             </div>
                         </div>
-                        <div class="scroll">
+                        <div class="pointer">
                             <div v-for="(contact, index) in contacts"
                                 class="row border-bottom"
                                 :class="{
-                                'active': index == activeContactIndex
-                                }">
+                                    'active': index == activeContactIndex
+                                }"
+                                @click="handleContactClick(index)">
                                 <div
                                     class="col-10 ms-3 d-flex"
                                     >
@@ -68,10 +69,10 @@
                     <section class="col-8">
                         <div class="row bkg-grey">
                             <div class="col-7 ms-3 d-flex">
-                                <img src="./img/avatar_1.jpg" alt="avatar_1">
+                                <img :src="contacts[activeContactIndex].avatar" :alt="contacts[activeContactIndex].name">
 
                                 <div>
-                                    <p class="m-0 ps-3 mt-3">Michele</p>
+                                    <p class="m-0 ps-3 mt-3">{{ contacts[activeContactIndex].name }}</p>
 
                                     <p class="m-0 ps-3">Ultimo accesso oggi alle 12:00</p>
                                 </div>
@@ -86,52 +87,28 @@
                             <div class="col-12 p-0 m-0">
                                 <div class="row">
                                     <div class="col">
-                                        <div class="d-flex justify-content-end">
-                                            <div class="bg-success rounded-3">
+                                        <div v-for="(message, index) in contacts[activeContactIndex].messages"
+                                            :class="{
+                                                'sent' : message.status == 'sent', 
+                                                'received' : message.status == 'received'
+                                                }">
+                                            <div :class="{
+                                                'sent-bg' : message.status == 'sent', 
+                                                'received-bg' : message.status == 'received'
+                                                }"
+                                                class="rounded-3">
                                                 <p class="m-0 pt-3 ps-3 pe-3">
     
-                                                   Hai portato a spasso il cane?
+                                                   {{ message.message }}
     
                                                 </p>
     
                                                 <p class="d-flex justify-content-end m-0">
     
-                                                    15:30
+                                                    {{ message.date }}
     
                                                 </p>
 
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex justify-content-end">
-                                            <div class="bg-success rounded-3">
-                                                <p class="m-0 pt-3 ps-3 pe-3">
-    
-                                                   Ricordati di stendere i panni
-    
-                                                </p>
-    
-                                                <p class="d-flex justify-content-end m-0">
-    
-                                                    15:50
-    
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex">
-                                            <div class="d-block bg-light rounded-3">
-                                                <p class="m-0 pt-3 ps-3 pe-3">
-    
-                                                   Tutto fatto!
-    
-                                                </p>
-    
-                                                <p class="d-flex justify-content-end m-0">
-    
-                                                    16:15
-    
-                                                </p>
                                             </div>
                                         </div>
                                     </div>
