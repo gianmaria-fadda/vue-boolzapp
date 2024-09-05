@@ -88,7 +88,7 @@ body main #app section .row .col-12 .row .col {
 
 body main #app section .row .col-12 {
     overflow-y: scroll;
-    height: 690px;
+    height: 77vh;
 }
 
 section .row .col-7 div p:last-child {
