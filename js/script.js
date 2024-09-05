@@ -3,6 +3,7 @@ const { createApp } = Vue
   createApp({
     data() {
       return {
+        searchQuery: '',
         activeContactIndex: 0,
         userMessage: '',
         contacts: [
@@ -168,6 +169,18 @@ const { createApp } = Vue
               ],
           }
       ]      
+      }
+    },
+    computed: {
+      resultQuery(){
+        if (this.searchQuery) {
+        return this.contacts.filter((contact) => {
+          return contact.name.toLowerCase().includes(this.searchQuery.toLowerCase());
+          });
+        }
+        else {
+          return this.contacts;
+        }
       }
     },
     methods: {

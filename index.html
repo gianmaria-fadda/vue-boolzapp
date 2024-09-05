@@ -36,12 +36,12 @@
                                 <form>
                                     <i class="fa-solid fa-magnifying-glass pe-3 ps-2"></i>
     
-                                    <input class="mt-2 mb-2" type="text" placeholder="Cerca o inizia una nuova chat" size="44">
+                                    <input v-model="searchQuery" class="mt-2 mb-2" type="text" placeholder="Cerca o inizia una nuova chat" size="44">
                                 </form>
                             </div>
                         </div>
                         <div class="pointer">
-                            <div v-for="(contact, index) in contacts"
+                            <div v-for="(contact, index) in resultQuery"
                                 class="row border-bottom"
                                 :class="{
                                     'active': index == activeContactIndex
