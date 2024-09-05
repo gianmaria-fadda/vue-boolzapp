@@ -20,7 +20,7 @@ img {
     box-shadow: .2px .2px .2px black, 0 0 .2px black, 0 0 5px black;
 }
 
-section .row,
+section .bkg-grey,
 aside .row .col {
     background-color: #EAEAEA;
 }
@@ -39,10 +39,6 @@ body {
 /*
     MAIN / ASIDE
 */
-
-body main #app aside {
-    height: 780px;
-}
 
 body main #app aside .scroll {
     height: 95%;
@@ -82,8 +78,15 @@ section .row .col i {
     MAIN / SECTION
 */
 
-body main #app section .row:not(:first-child) {
-    height: 80%;
+body main #app section,
+body main #app section .row .col-8,
+body main #app section .row .col-12,
+body main #app section .row .col-12 .row .col {
+    height: 700px;
+}
+
+body main #app section .row .col-12 {
+    overflow-y: scroll;
 }
 
 section .row .col-7 div p:last-child {
@@ -91,18 +94,33 @@ section .row .col-7 div p:last-child {
     color: grey;
 }
 
-section .row:last-child {
+section .row .col-12 {
     background-image: url(../img/mine.jpg);
-    max-width: 100%;
 }
 
-section .row:last-child .col-12 .row .col {
+body main #app section .row .col-12 {
+    overflow-x: hidden;
+}
+
+section .row .col-12 .row .col {
     padding: 50px 100px;
 }
 
 section .row:last-child .col-12 .row .col div div p:last-child {
-    padding-left: 225px;
     padding-right: 5px;
     font-size: 1cap;
     color: #B1B1B1;
+}
+
+/*
+    MAIN / SECTION / FOOTER
+*/
+
+footer {
+    background-color: #EAEAEA;
+}
+
+footer .row .col input {
+    padding: 0 25px;
+    margin: 20px 0;
 }
