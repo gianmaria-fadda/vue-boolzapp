@@ -119,7 +119,11 @@
                         <footer>
                             <div class="row">
                                 <div class="col d-flex justify-content-center">
-                                    <input type="text" placeholder="Scrivi un messaggio ..." size="80">
+                                    <input
+                                        @keyup.enter="sendMessage()"
+                                        v-model="userMessage"
+                                        type="text" placeholder="Scrivi un messaggio ..." 
+                                        size="80">
                                 </div>
                             </div>
                         </footer>

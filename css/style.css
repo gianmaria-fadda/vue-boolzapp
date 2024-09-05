@@ -41,7 +41,7 @@ body {
 */
 
 .pointer {
-    height: 500px;
+    height: 520px;
     cursor: pointer;
     overflow-y: scroll;
     overflow-x: hidden;
