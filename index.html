@@ -41,40 +41,18 @@
                             </div>
                         </div>
                         <div class="scroll">
-                            <div class="row active">
-                                <div class="col-10 ms-3 d-flex border-bottom">
-                                    <img src="./img/avatar_1.jpg" alt="avatar_1">
+                            <div v-for="(contact, index) in contacts"
+                                class="row border-bottom"
+                                :class="{
+                                'active': index == activeContactIndex
+                                }">
+                                <div
+                                    class="col-10 ms-3 d-flex"
+                                    >
+                                    <img :src="contact.avatar" :alt="contact.name">
     
                                     <div>
-                                        <p class="m-0 ps-3">Michele</p>
-    
-                                        <p class="m-0 ps-3">Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                                <div class="col-1">
-                                    <p>12:00</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-10 ms-3 d-flex">
-                                    <img src="./img/avatar_1.jpg" alt="avatar_1">
-    
-                                    <div>
-                                        <p class="m-0 ps-3">Michele</p>
-    
-                                        <p class="m-0 ps-3">Ultimo messaggio inviato</p>
-                                    </div>
-                                </div>
-                                <div class="col-1">
-                                    <p>12:00</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-10 ms-3 d-flex">
-                                    <img src="./img/avatar_1.jpg" alt="avatar_1">
-    
-                                    <div>
-                                        <p class="m-0 ps-3">Michele</p>
+                                        <p class="m-0 ps-3">{{ contact.name }}</p>
     
                                         <p class="m-0 ps-3">Ultimo messaggio inviato</p>
                                     </div>
